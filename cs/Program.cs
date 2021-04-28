@@ -11,7 +11,7 @@ namespace ASCII_Converter
     class Program
     {
         private const double WIDTH_OFFSET = 2.0;
-        private const int MAX_WIDTH = 450;
+        private const int MAX_WIDTH = 400;
 
         #region maximize console
         [DllImport("user32.dll")]

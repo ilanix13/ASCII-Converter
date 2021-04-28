@@ -8,7 +8,7 @@ namespace ASCII_Converter
         {
             for (int y=0; y < bitmap.Height; y++)
             {
-                for (int x=0; x < bitmap.Width; x++ )
+                for (int x=0; x < bitmap.Width; x++)
                 {
                     var pixel = bitmap.GetPixel(x, y);
                     int avg = (pixel.R + pixel.G + pixel.B) / 3;
