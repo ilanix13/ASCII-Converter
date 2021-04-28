@@ -1,0 +1,7 @@
+C:\Users\Ilan\source\repos\ASCII Converter\bin\Release\ASCII Converter.exe.config
+C:\Users\Ilan\source\repos\ASCII Converter\bin\Release\ASCII Converter.exe
+C:\Users\Ilan\source\repos\ASCII Converter\bin\Release\ASCII Converter.pdb
+C:\Users\Ilan\source\repos\ASCII Converter\obj\Release\ASCII Converter.csprojAssemblyReference.cache
+C:\Users\Ilan\source\repos\ASCII Converter\obj\Release\ASCII Converter.csproj.CoreCompileInputs.cache
+C:\Users\Ilan\source\repos\ASCII Converter\obj\Release\ASCII Converter.exe
+C:\Users\Ilan\source\repos\ASCII Converter\obj\Release\ASCII Converter.pdb
