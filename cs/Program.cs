@@ -27,7 +27,7 @@ namespace ASCII_Converter
         static void Main(string[] args)
         {
             Maximize();
-            MainMenu();          
+            MainMenu();
         }
         private static Bitmap ResizeBitmap(Bitmap bitmap)
         {
