@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Linq;
 using System.Drawing;
 using System.Diagnostics;
 using System.Windows.Forms;
@@ -9,7 +11,7 @@ namespace ASCII_Converter
     class Program
     {
         private const double WIDTH_OFFSET = 2.0;
-        private const int MAX_WIDTH = 400;
+        private const int MAX_WIDTH = 450;
 
         #region maximize console
         [DllImport("user32.dll")]
@@ -44,29 +46,36 @@ namespace ASCII_Converter
             };
 
             Console.WriteLine("Press ENTER to start");
+            Console.WriteLine("Press S to save");
 
             while (true)
             {
-                Console.ReadKey();
-
-                if (fileDialog.ShowDialog() != DialogResult.OK)
-                    continue;
-
-                Console.Clear();
-
-                var bitmap = new Bitmap(fileDialog.FileName);
-                bitmap = ResizeBitmap(bitmap);
-                bitmap.ToGrayColor();
-
-                var converter = new BitmapToASCII(bitmap);
-                var rows = converter.Convert();
-
-                foreach (var row in rows)
+                if (Console.ReadKey().Key == ConsoleKey.Enter)
                 {
-                    Console.WriteLine(row);
-                }
+                    if (fileDialog.ShowDialog() != DialogResult.OK)
+                        continue;
 
-                Console.SetCursorPosition(0, 0);
+                    Console.Clear();
+
+                    var bitmap = new Bitmap(fileDialog.FileName);
+                    bitmap = ResizeBitmap(bitmap);
+                    bitmap.ToGrayColor();
+
+                    var converter = new BitmapToASCII(bitmap);
+                    var rows = converter.Convert();
+
+                    foreach (var row in rows)
+                    {
+                        Console.WriteLine(row);
+                    }
+
+                    if (Console.ReadKey().Key == ConsoleKey.S)
+                    {
+                        File.WriteAllLines("../../image.txt", rows.Select(row => new string(row)));
+                    }
+
+                    Console.SetCursorPosition(0, 0);
+                }
             }
         }
     }
